@@ -13,5 +13,14 @@ function agregarAmigo() {
 		inputNombre.value = '';
 		inputNombre.focus();
 		amigos.push(nombre);
+		actualizarLista();
 	}
+}
+
+function actualizarLista() {
+	let listaAmigos = document.getElementById('listaAmigos');
+	listaAmigos.innerHTML = '';
+
+	for (let index = 0; index < amigos.length; index++)
+		listaAmigos.innerHTML += `<li>${amigos[index]}</li>`;
 }
